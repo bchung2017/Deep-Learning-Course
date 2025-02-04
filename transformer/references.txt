@@ -1,0 +1,11 @@
+BPE Implementation: https://www.geeksforgeeks.org/byte-pair-encoding-bpe-in-nlp/
+Referenced this implementation of BPE when writing my tokenizer for the MiniPile dataset, their usage of regular expressions and dictionaries was insightful
+
+BPE Tokenizer Implementation: https://medium.com/@hugmanskj/hands-on-build-tokenizer-using-bpe-byte-pair-encoding-d33cca53ba9f
+This was helpful in integrating BPE algorithm into tokenizing data after building the tokenized vocabulary
+
+PyTorch Transformer implementation: https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/transformer.py
+Referenced starting parameters of transformer model, such as number of heads, dimensions, and embeddings
+
+Sinusoid Positional Embedding: https://github.com/wzlxjtu/PositionalEncoding2D/blob/master/positionalembedding2d.py
+Referenced algorithm for sinusoidal positional embedding

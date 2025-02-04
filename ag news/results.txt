@@ -1,0 +1,14 @@
+Training output, evaluations made on validation dataset(10% of training dataset):
+
+{'eval_loss': 0.20747020840644836, 'eval_accuracy': 0.9318333333333333, 'eval_runtime': 39.4495, 'eval_samples_per_second': 304.187, 'eval_steps_per_second': 19.012, 'epoch': 1.0}
+{'eval_loss': 0.20345984399318695, 'eval_accuracy': 0.9388333333333333, 'eval_runtime': 39.8065, 'eval_samples_per_second': 301.458, 'eval_steps_per_second': 18.841, 'epoch': 2.0}
+{'eval_loss': 0.21608687937259674, 'eval_accuracy': 0.9390833333333334, 'eval_runtime': 40.5823, 'eval_samples_per_second': 295.695, 'eval_steps_per_second': 18.481, 'epoch': 3.0}
+{'train_runtime': 4952.1437, 'train_samples_per_second': 65.426, 'train_steps_per_second': 4.089, 'train_loss': 0.19119223625277296, 'epoch': 3.0}
+100%|███████████████████████████████████████████████████████████████████████████| 20250/20250 [1:22:32<00:00,  4.09it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████| 475/475 [00:22<00:00, 20.70it/s]
+
+
+Test output, utilizing dedicated test dataset:
+100%|█████████████████████████████████████████████████████████████████████████████████| 475/475 [00:45<00:00, 10.33it/s]
+Evaluation results: {'eval_loss': 0.2130102515220642, 'eval_model_preparation_time': 0.0024, 'eval_accuracy': 0.9428947368421052, 'eval_runtime': 47.5388, 'eval_samples_per_second': 159.869, 'eval_steps_per_second': 9.992}
+Test set accuracy: 0.9428947368421052

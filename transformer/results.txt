@@ -1,0 +1,14 @@
+Epoch 1/10, Loss: 7.7167
+Epoch 2/10, Loss: 7.5927
+Epoch 3/10, Loss: 7.4979
+Epoch 4/10, Loss: 7.3569
+Epoch 5/10, Loss: 7.2761
+Epoch 6/10, Loss: 7.1554
+Epoch 7/10, Loss: 7.0728
+Epoch 8/10, Loss: 6.9969
+Epoch 9/10, Loss: 6.8917
+Epoch 10/10, Loss: 6.8445
+Model saved successfully.
+Tokenized input: [1949, 787]
+Input: 'This is a'
+Predicted continuation: 'This is a toppling Bling (Reuters) said. Affirmative record E-mail'

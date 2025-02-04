@@ -1,0 +1,132 @@
+Software Description:
+embedding_generator.py: Generates embeddings for LoCoV1 dataset and saves to embeddings.pkl
+query_embeddings: Loads embeddings.pkl into Chroma database and queries the embeddings for most relevant results
+
+Embedding generation output:
+Generating Embeddings: 100%|████████████████████████████████████████████████████| 14838/14838 [1:55:48<00:00,  2.14it/s]
+[]
+
+
+Working Queries:
+-Document text is truncated to first 100 characters
+-Ordered from least similar to most similar
+-Top 5 results returned for each query
+
+1. "database operations"
+-Most results are stack overflow forum posts regarding database operations
+
+Enter your query (or type 'exit' to quit): database operations
+Query results:
+['stackoverflow_Passage_771946', 'gov_report_Passage_352', 'stackoverflow_Passage_766413', 'stackoverflow_Passage_302186', 'stackoverflow_Passage_374251']
+ID: stackoverflow_Passage_771946, Similarity: 0.830704927444458
+Passage:
+### TL;DR: `git merge --squash` merges (verb), but does not make a merge (noun).
+
+ The "merge header" you mention is not in the commits in that form. Instead, it's just something that `git log` prints
+ID: gov_report_Passage_352, Similarity: 0.9145229458808899
+Passage:
+        Introduction
+
+This report describes and analyzes annual appropriations for the Department of Homeland Security (DHS) for FY2019. It compares the enacted FY2018 appropriations for DHS, the Donald J. T
+ID: stackoverflow_Passage_766413, Similarity: 1.0842626094818115
+Passage:
+Note, I am not doing this for the bounty. Please give to someone else.
+
+ This could be done with a few `LEFT JOIN`s of derived tables. Note you did not supply the sanctions table. But the below would
+ID: stackoverflow_Passage_302186, Similarity: 1.1185909509658813
+Passage:
+When you want to count the numbers having some given property between two limits, it is often useful to solve the somewhat simpler problem
+
+
+>  How many numbers with the given property are there betw
+ID: stackoverflow_Passage_374251, Similarity: 1.1527199745178223
+Passage:
+The key here is to understand how inner classes accesses the members of outer classes. And how is access to those members qualified in case of `private` and `non-private` members. (**Note:** I'll talk
+
+
+2. "Department of Homeland Security"
+-Most relevant results with similarity score 1.01 is a government passage regarding the Department of Homeland Security
+
+Enter your query: Department of Homeland Security
+Query results:
+['stackoverflow_Passage_766413', 'stackoverflow_Passage_302186', 'stackoverflow_Passage_983512', 'stackoverflow_Passage_771946', 'gov_report_Passage_352']
+ID: stackoverflow_Passage_766413, Similarity: 0.9392237663269043
+Passage:
+Note, I am not doing this for the bounty. Please give to someone else.
+
+ This could be done with a few `LEFT JOIN`s of derived tables. Note you did not supply the sanctions table. But the below would
+ID: stackoverflow_Passage_302186, Similarity: 0.9404139518737793
+Passage:
+When you want to count the numbers having some given property between two limits, it is often useful to solve the somewhat simpler problem
+
+
+>  How many numbers with the given property are there betw
+ID: stackoverflow_Passage_983512, Similarity: 0.9803619384765625
+Passage:
+It's not really a *mistake*, and everything is still OK here. Your HEAD is still detached, it's just detached at a different commit.
+
+ It's generally wiser to use `git checkout` to switch to the commi
+ID: stackoverflow_Passage_771946, Similarity: 0.9805123209953308
+Passage:
+### TL;DR: `git merge --squash` merges (verb), but does not make a merge (noun).
+
+ The "merge header" you mention is not in the commits in that form. Instead, it's just something that `git log` prints
+ID: gov_report_Passage_352, Similarity: 1.010027527809143
+Passage:
+        Introduction
+
+This report describes and analyzes annual appropriations for the Department of Homeland Security (DHS) for FY2019. It compares the enacted FY2018 appropriations for DHS, the Donald J. T
+
+
+
+Incorrect Queries:
+-Taken from the LoCoV1-Queries database
+
+1. "Who is the spouse of the composer of film Carmen On Ice?"
+
+Enter your query: Who is the spouse of the composer of film Carmen On Ice?
+Query results:
+['courtlistener_HTML_Passage_1442', 'courtlistener_HTML_Passage_232', 'stackoverflow_Passage_1000290', 'courtlistener_Plain_Text_Passage_1442', 'gov_report_Passage_224']
+ID: courtlistener_HTML_Passage_1442, Similarity: 0.9733835458755493
+Passage:
+<pre class="inline">                  FOR PUBLICATION
+  UNITED STATES COURT OF APPEALS
+       FOR THE NINTH CIRCUIT
+
+WESTERN WATERSHEDS PROJECT;            
+RALPH MAUGHAN; IDAHO WILDLIFE
+FEDERATION;
+ID: courtlistener_HTML_Passage_232, Similarity: 1.0113365650177002
+Passage:
+<pre class="inline">Chesapeake Bay Foundation, Inc., et al. v. CREG Westport Developers I, LLC, et al., No.
+53, September Term, 2021, Opinion by Booth, J.
+
+
+MARYLAND FOREST CONSERVATION ACT—FINAL DECI
+ID: stackoverflow_Passage_1000290, Similarity: 1.029115080833435
+Passage:
+You set the position on your wrapper to relative and set the z-index for your absolute positioned dropdown element.
+
+
+```
+.dropdown_wrapper { position: relative; } .dropdown_contents { background-c
+ID: courtlistener_Plain_Text_Passage_1442, Similarity: 1.0618398189544678
+Passage:
+                  FOR PUBLICATION
+  UNITED STATES COURT OF APPEALS
+       FOR THE NINTH CIRCUIT
+
+WESTERN WATERSHEDS PROJECT;            
+RALPH MAUGHAN; IDAHO WILDLIFE
+FEDERATION; IDAHO CONSERVATION
+L
+ID: gov_report_Passage_224, Similarity: 1.0827711820602417
+Passage:
+        Introduction
+
+The program activities of most federal agencies are generally funded on an annual basis through the enactment of 12 regular appropriations acts . When those annual appropriations acts a
+
+
+
+Notes:
+Querying "Who is the spouse of the composer of film Carmen On Ice?" should at least bring up document "2wikimqa_Query_0", as this document has the answer to this questions. However, I think the search engine failed because the "2wikimqa" dataset makes up 0.8% of the entire dataset, so I assume the embeddings were not able to match up with the small percentage of embeddings generated from that dataset.

@@ -1,0 +1,12 @@
+beir
+openai
+cohere
+voyageai
+tiktoken
+multiprocess==0.70.14
+bs4
+omegaconf
+einops
+opt_einsum
+composer
+rank_bm25
